@@ -6,11 +6,11 @@
 
 Install npm package, next to your project's `grunt.js` file:
 
-  npm install grunt-coffeelint
+    npm install grunt-coffeelint
 
 Add this line to your project's `grunt.js`:
 
-  grunt.loadNpmTasks('grunt-coffeelint');
+    grunt.loadNpmTasks('grunt-coffeelint');
 
 
 ## Configuration
@@ -48,7 +48,7 @@ grunt.initConfig({
 });
 ````
 
-## Global - default options
+### Global - default options
 
 ````javascript
 grunt.initConfig({
