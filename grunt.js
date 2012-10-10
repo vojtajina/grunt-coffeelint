@@ -8,8 +8,11 @@ module.exports = function(grunt) {
         options: {
           indentation: {
             value: 2,
-            level: "error"
+            level: "warn"
           },
+          "no_trailing_semicolons": {
+            level: "warn"
+          }
         }
       },
       two: ['test/fixtures/correct.coffee', 'test/fixtures/some.coffee']
