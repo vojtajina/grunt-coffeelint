@@ -2,12 +2,10 @@ module.exports = function(grunt) {
   var coffeelint = require('coffeelint');
 
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
-
-    var files = grunt.file.expandFiles(this.data.files || this.data);
     var options = this.data.options || grunt.config('coffeelintOptions') || {};
     var errorCount = 0;
 
-    files.forEach(function(file) {
+    this.filesSrc.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
       var errors = coffeelint.lint(grunt.file.read(file), options);
       

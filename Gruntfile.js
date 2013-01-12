@@ -4,7 +4,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     coffeelint: {
       one: {
-        files: ['test/fixtures/*.coffee'],
+        files: {
+          src: ['test/fixtures/*.coffee'],
+        },
         options: {
           indentation: {
             value: 2,
