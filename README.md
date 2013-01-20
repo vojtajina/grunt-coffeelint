@@ -36,7 +36,9 @@ grunt.initConfig({
     coffeelint: {
       app: ['app/*.coffee', 'scripts/*.coffee'],
       tests: {
-        files: ['tests/*.coffee'],
+        files: {
+          src: ['tests/*.coffee'],
+        }
         options: {
           "no_trailing_whitespace": {
             "level": "error"
