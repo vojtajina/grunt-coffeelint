@@ -8,7 +8,9 @@
     "email": "vojta.jina@gmail.com"
   },
   "contributors": [
-    "Ed Siok <sioked@gmail.com>"
+    "Christoph Neuroth <christoph.neuroth@gmail.com>",
+    "Ed Siok <sioked@gmail.com>",
+    "travis4all <travis4all@diamon.dz>"
   ],
   "repository": {
     "type": "git",
