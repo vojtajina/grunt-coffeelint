@@ -2,31 +2,44 @@ module.exports = function(grunt) {
   var coffeelint = require('coffeelint');
 
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
-    var options = this.data.options || grunt.config('coffeelintOptions') || {};
-    var errorCount = 0;
 
-    this.filesSrc.forEach(function(file) {
+    var files = this.filesSrc;
+    var options = this.options()
+    var errorCount = 0;
+    var warnCount = 0;
+
+    files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
+
       var errors = coffeelint.lint(grunt.file.read(file), options);
-      
+
       if (!errors.length) {
         grunt.verbose.ok();
       } else {
         errors.forEach(function(error) {
-          var status = "[warn]".yellow;
-          if(/error/.test(error.level)){
+          var status;
+
+          if (error.level === 'error') {
             errorCount += 1;
             status = "[error]".red;
+          } else if (error.level === 'warn') {
+            warnCount += 1;
+            status = "[warn]".yellow;
+          } else {
+            return;
           }
-          grunt.log.writeln(status + ' ' +file + ':' + error.lineNumber + ' ' + error.message + ' (' + error.rule + ')');
+
+          grunt.log.writeln(status + ' ' + file + ':' + error.lineNumber + ' ' + error.message + ' (' + error.rule + ')');
         });
       }
     });
-    
-    if(!errorCount){
-      grunt.log.write("Lint free");
-    } else {
+
+    if (errorCount) {
       return false;
+    }
+
+    if (!warnCount) {
+      grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
     }
   });
 };
