@@ -5,11 +5,11 @@
 
 ## Installation
 
-Install npm package, next to your project's `grunt.js` file:
+Install npm package, next to your project's `Gruntfile.js` file:
 
     npm install grunt-coffeelint
 
-Add this line to your project's `grunt.js`:
+Add this line to your project's `Gruntfile.js`:
 
     grunt.loadNpmTasks('grunt-coffeelint');
 
