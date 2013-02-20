@@ -19,6 +19,12 @@
   "bugs": {
     "url": "https://github.com/vojtajina/grunt-coffeelint/issues"
   },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/vojtajina/grunt-coffeelint/blob/master/LICENSE-"
+    }
+  ],
   "main": "grunt.js",
   "engines": {
     "node": "*"
