@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         grunt.verbose.ok();
       } else {
         errors.forEach(function(error) {
-          var status;
+          var status, message;
 
           if (error.level === 'error') {
             errorCount += 1;
@@ -29,8 +29,12 @@ module.exports = function(grunt) {
             return;
           }
 
-          grunt.log.writeln(status + ' ' + file + ':' + error.lineNumber + ' ' + error.message + ' (' + error.rule + ')');
-        });
+          message = file + ':' + error.lineNumber + ' ' + error.message + ' (' + error.rule + ')';
+
+          grunt.log.writeln(status + ' ' + message);
+
+          grunt.event.emit('coffeelint:' + error.level, error.level, message);
+          grunt.event.emit('coffeelint:any', error.level, message);        });
       }
     });
 
