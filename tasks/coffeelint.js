@@ -14,28 +14,29 @@ module.exports = function(grunt) {
       var errors = coffeelint.lint(grunt.file.read(file), options);
 
       if (!errors.length) {
-        grunt.verbose.ok();
-      } else {
-        errors.forEach(function(error) {
-          var status, message;
-
-          if (error.level === 'error') {
-            errorCount += 1;
-            status = "[error]".red;
-          } else if (error.level === 'warn') {
-            warnCount += 1;
-            status = "[warn]".yellow;
-          } else {
-            return;
-          }
-
-          message = file + ':' + error.lineNumber + ' ' + error.message + ' (' + error.rule + ')';
-
-          grunt.log.writeln(status + ' ' + message);
-
-          grunt.event.emit('coffeelint:' + error.level, error.level, message);
-          grunt.event.emit('coffeelint:any', error.level, message);        });
+        return grunt.verbose.ok();
       }
+
+      errors.forEach(function(error) {
+        var status, message;
+
+        if (error.level === 'error') {
+          errorCount += 1;
+          status = "[error]".red;
+        } else if (error.level === 'warn') {
+          warnCount += 1;
+          status = "[warn]".yellow;
+        } else {
+          return;
+        }
+
+        message = file + ':' + error.lineNumber + ' ' + error.message +
+            ' (' + error.rule + ')';
+
+        grunt.log.writeln(status + ' ' + message);
+        grunt.event.emit('coffeelint:' + error.level, error.level, message);
+        grunt.event.emit('coffeelint:any', error.level, message);
+      });
     });
 
     if (errorCount) {
@@ -43,7 +44,8 @@ module.exports = function(grunt) {
     }
 
     if (!warnCount) {
-      grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
+      grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') +
+          ' lint free.');
     }
   });
 };

@@ -7,9 +7,9 @@ module.exports = function(grunt) {
       // global options
       options: {
         indentation: {
-            value: 4,
-            level: 'warn'
-          }
+          value: 4,
+          level: 'warn'
+        }
       },
 
       // a target that overrides default options
