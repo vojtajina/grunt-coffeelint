@@ -36,6 +36,16 @@ module.exports = function(grunt) {
   // Load local tasks.
   grunt.loadTasks('tasks');
 
+  grunt.loadNpmTasks('grunt-npm');
+  grunt.loadNpmTasks('grunt-bump');
+
   // Default task.
   grunt.registerTask('default', 'coffeelint');
+
+  grunt.registerTask('release', 'Bump version, push to NPM.', function(type) {
+    grunt.task.run([
+      'bump:' + (type || 'patch'),
+      'npm-publish'
+    ]);
+  });
 };
