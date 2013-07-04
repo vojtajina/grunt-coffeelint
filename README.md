@@ -76,9 +76,7 @@ grunt.initConfig({
 });
 ````
 
-For available options see [example configuration] or [coffeelint homepage].
-
+For available options see [coffeelint homepage].
 
 [CoffeeLint]: http://www.coffeelint.org/
 [coffeelint homepage]: http://www.coffeelint.org/
-[example configuration]: https://raw.github.com/clutchski/coffeelint/master/examples/coffeelint.json
