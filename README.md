@@ -13,6 +13,15 @@ Add this line to your project's `Gruntfile.js`:
 
     grunt.loadNpmTasks('grunt-coffeelint');
 
+## Options
+
+A few additional options are supported:
+
+### force
+Type: `Boolean`
+Default value: `false`
+
+Set `force` to `true` to report CoffeeLint errors but not fail the task.
 
 ## Configuration
 
