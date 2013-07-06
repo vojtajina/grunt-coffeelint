@@ -4,7 +4,9 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
 
     var files = this.filesSrc;
-    var options = this.options();
+    var options = this.options({
+      force: false,
+    });
     var errorCount = 0;
     var warnCount = 0;
 
@@ -39,7 +41,7 @@ module.exports = function(grunt) {
       });
     });
 
-    if (errorCount) {
+    if (errorCount && !options.force) {
       return false;
     }
 
