@@ -3,12 +3,14 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
 
-    var files = this.filesSrc;
-    var options = this.options({
-      force: false,
-    });
     var errorCount = 0;
     var warnCount = 0;
+    var files = this.filesSrc;
+    var options = this.options();
+
+    if (options.config != undefined) {
+        options = grunt.file.readJSON(options.config);
+    }
 
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
