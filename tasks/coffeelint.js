@@ -8,9 +8,9 @@ module.exports = function(grunt) {
     var files = this.filesSrc;
     var options = this.options();
 
-    if (options.config != undefined) {
-        var config = grunt.file.readJSON(options.config);
-        options.config = undefined;
+    if (options.configFile != undefined) {
+        var config = grunt.file.readJSON(options.configFile);
+        options.configFile = undefined;
         for (var key in options) {
             config[key] = options[key];
         }
