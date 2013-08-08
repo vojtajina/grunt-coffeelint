@@ -9,12 +9,12 @@ module.exports = function(grunt) {
     var options = this.options();
 
     if (options.configFile != undefined) {
-        var config = grunt.file.readJSON(options.configFile);
-        options.configFile = undefined;
-        for (var key in options) {
-            config[key] = options[key];
-        }
-        options = config;
+      var config = grunt.file.readJSON(options.configFile);
+      options.configFile = undefined;
+      for (var key in options) {
+          config[key] = options[key];
+      }
+      options = config;
     }
 
     files.forEach(function(file) {
@@ -53,8 +53,7 @@ module.exports = function(grunt) {
     }
 
     if (!warnCount) {
-      grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') +
-          ' lint free.');
+      grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
     }
   });
 };
