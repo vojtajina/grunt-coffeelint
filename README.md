@@ -23,6 +23,12 @@ Default value: `false`
 
 Set `force` to `true` to report CoffeeLint errors but not fail the task.
 
+### growl
+Type: `Boolean`
+Default value: `false`
+
+Set `growl` to `true` to report CoffeeLint errors and warnings using [Growl](visionmedia/node-growl).
+
 ## Configuration
 
 `coffeelint` is a multitask, so you can use it similary to `lint`, `watch` etc...
