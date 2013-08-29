@@ -6,9 +6,15 @@ module.exports = function(grunt) {
     var files = this.filesSrc;
     var options = this.options({
       force: false,
+      growl: false
     });
     var errorCount = 0;
     var warnCount = 0;
+
+    var growl;
+    if (options.growl) {
+      growl = require('growl');
+    }
 
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
@@ -38,6 +44,10 @@ module.exports = function(grunt) {
         grunt.log.writeln(status + ' ' + message);
         grunt.event.emit('coffeelint:' + error.level, error.level, message);
         grunt.event.emit('coffeelint:any', error.level, message);
+
+        if (options.growl) {
+          growl(message, {title: "Coffeelint "+error.level, sticky: true});
+        }
       });
     });
 

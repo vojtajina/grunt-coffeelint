@@ -36,7 +36,8 @@
     "grunt": "~0.4"
   },
   "dependencies": {
-    "coffeelint": "~0.5"
+    "coffeelint": "~0.5",
+    "growl": "~1.7.0"
   },
   "devDependencies": {
     "grunt": "~0.4",
