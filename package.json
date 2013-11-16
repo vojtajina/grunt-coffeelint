@@ -30,7 +30,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt default"
   },
   "peerDependencies": {
     "grunt": "~0.4"
