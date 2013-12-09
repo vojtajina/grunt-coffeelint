@@ -3,22 +3,22 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
 
-    coffeelint: 
+    coffeelint:
       # global options
-      options: 
-        indentation: 
+      options:
+        indentation:
           value: 4
           level: 'warn'
 
       # a target that overrides default options
-      one: 
-        files: 
+      one:
+        files:
           src: ['test/fixtures/*.coffee']
-        options: 
-          indentation: 
+        options:
+          indentation:
             value: 2
             level: 'warn'
-          'no_trailing_semicolons': 
+          'no_trailing_semicolons':
             level: 'warn'
 
       # a simple target
