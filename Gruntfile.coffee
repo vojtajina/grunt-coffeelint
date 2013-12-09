@@ -35,5 +35,8 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'test', 'coffeelint'
 
-  grunt.registerTask 'release', 'Bump version, push to NPM.', (type)-> 
-    grunt.task.run ["bump: #{type || 'patch'}",'npm-publish']
+  grunt.registerTask 'release', 'Bump version, push to NPM.', (type)->
+    grunt.task.run [
+      "bump:#{type || 'patch'}"
+      'npm-publish'
+    ]
