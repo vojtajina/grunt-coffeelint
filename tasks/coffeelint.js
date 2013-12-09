@@ -20,7 +20,8 @@ module.exports = function(grunt) {
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
 
-      var errors = coffeelint.lint(grunt.file.read(file), options);
+      var literate = file.indexOf(".litcoffee") !== -1;
+      var errors = coffeelint.lint(grunt.file.read(file), options, literate);
 
       if (!errors.length) {
         return grunt.verbose.ok();
