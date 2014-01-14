@@ -25,7 +25,7 @@
       "url": "http://github.com/vojtajina/grunt-coffeelint/blob/master/LICENSE-"
     }
   ],
-  "main": "grunt.js",
+  "main": "Gruntfile.coffee",
   "engines": {
     "node": "*"
   },
