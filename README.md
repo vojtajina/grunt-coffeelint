@@ -76,6 +76,21 @@ grunt.initConfig({
 });
 ````
 
+### Loading external config
+
+````javascript
+grunt.initConfig({
+    ...
+    coffeelint: {
+      options: {
+        configFile: 'coffeelint.json'
+      }
+    },
+    ...
+});
+````
+Task `options` take precedence over `configFile` options.
+
 For available options see [coffeelint homepage].
 
 [CoffeeLint]: http://www.coffeelint.org/
