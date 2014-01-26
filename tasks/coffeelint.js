@@ -33,14 +33,16 @@ module.exports = function(grunt) {
         if (error.level === 'error') {
           errorCount += 1;
           status = "[error]".red;
+          lineNumber = error.lineNumber.toString().red;
         } else if (error.level === 'warn') {
           warnCount += 1;
           status = "[warn]".yellow;
+          lineNumber = error.lineNumber.toString().yellow;
         } else {
           return;
         }
 
-        message = file + ':' + error.lineNumber + ' ' + error.message +
+        message = file + ':' + lineNumber + ' ' + error.message +
             ' (' + error.rule + ')';
 
         grunt.log.writeln(status + ' ' + message);
