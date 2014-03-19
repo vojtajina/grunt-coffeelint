@@ -1,7 +1,7 @@
 [![build status](https://secure.travis-ci.org/vojtajina/grunt-coffeelint.png)](http://travis-ci.org/vojtajina/grunt-coffeelint)
 # grunt-coffeelint
 
-**Lint your CoffeeScript by [CoffeeLint].**
+**Lint your CoffeeScript with [CoffeeLint].**
 
 ## Installation
 
