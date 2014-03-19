@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   var coffeelint = require('coffeelint');
+  var reporter = require('coffeelint-stylish').reporter;
 
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
 
@@ -27,15 +28,15 @@ module.exports = function(grunt) {
         return grunt.verbose.ok();
       }
 
+      reporter(file, errors);
+
       errors.forEach(function(error) {
         var status, message;
 
         if (error.level === 'error') {
           errorCount += 1;
-          status = "[error]".red;
         } else if (error.level === 'warn') {
           warnCount += 1;
-          status = "[warn]".yellow;
         } else {
           return;
         }
@@ -43,7 +44,6 @@ module.exports = function(grunt) {
         message = file + ':' + error.lineNumber + ' ' + error.message +
             ' (' + error.rule + ')';
 
-        grunt.log.writeln(status + ' ' + message);
         grunt.event.emit('coffeelint:' + error.level, error.level, message);
         grunt.event.emit('coffeelint:any', error.level, message);
       });
