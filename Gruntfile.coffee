@@ -24,11 +24,15 @@ module.exports = (grunt) ->
       # a simple target
       two: ['test/fixtures/correct.coffee', 'test/fixtures/some.coffee']
 
+    'bump': options:
+      pushTo: 'upstream'
+
   # Load local tasks.
   grunt.loadTasks 'tasks'
 
   grunt.loadNpmTasks 'grunt-npm'
   grunt.loadNpmTasks 'grunt-bump'
+  grunt.loadNpmTasks 'grunt-auto-release'
 
   # Default task.
   grunt.registerTask 'default', 'coffeelint'
