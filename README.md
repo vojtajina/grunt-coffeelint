@@ -32,7 +32,6 @@ grunt.initConfig({
     ...
     coffeelint: {
       app: ['app/*.coffee', 'scripts/*.coffee']
-      }
     },
     ...
 });
