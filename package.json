@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "coffeelint": "~1.1",
-    "coffeelint-stylish": "~0.0.1"
+    "coffeelint-stylish": "~0.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4",
