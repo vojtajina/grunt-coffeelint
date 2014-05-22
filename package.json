@@ -35,17 +35,18 @@
     "test": "grunt default"
   },
   "peerDependencies": {
-    "grunt": "~0.4"
+    "grunt": "~0.4",
+    "coffeelint": "^1.4"
   },
   "dependencies": {
-    "coffeelint": "~1.1",
     "coffeelint-stylish": "~0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4",
     "grunt-bump": "~0.0.7",
     "grunt-npm": "~0.0.2",
-    "grunt-auto-release": "0.0.6"
+    "grunt-auto-release": "0.0.6",
+    "coffeelint": "^1.4"
   },
   "keywords": [
     "gruntplugin"
