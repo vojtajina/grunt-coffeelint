@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/vojtajina/grunt-coffeelint.png)](http://travis-ci.org/vojtajina/grunt-coffeelint)
+[![build status](https://secure.travis-ci.org/vojtajina/grunt-coffeelint.svg)](http://travis-ci.org/vojtajina/grunt-coffeelint)
 # grunt-coffeelint
 
 **Lint your CoffeeScript with [CoffeeLint].**
