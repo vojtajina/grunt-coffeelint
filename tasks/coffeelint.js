@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   var coffeelint = require('coffeelint');
   var reporter = require('coffeelint-stylish').reporter;
+  var ignore = require('ignore');
 
   grunt.registerMultiTask('coffeelint', 'Validate files with CoffeeLint', function() {
 
@@ -17,6 +18,9 @@ module.exports = function(grunt) {
       }
       options = config;
     }
+
+    // Exclude files in .coffeelintignore
+    files = ignore().addIgnoreFile('.coffeelintignore').filter(files);
 
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
