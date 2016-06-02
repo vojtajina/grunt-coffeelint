@@ -1,6 +1,7 @@
 ## Change Log
 
 ### v0.0.16 (2016/06/02 19:19 +00:00)
+- [0c4f0c9](https://github.com/vojtajina/grunt-coffeelint/commit/0c4f0c9bf8a458108d9f4a17710f877da7546086) Added CHANGELOG, closes [#20](https://github.com/vojtajina/grunt-coffeelint/issues/20) (@mwittig)
 - [#68](https://github.com/vojtajina/grunt-coffeelint/pull/68) Update peerDependencies to support Grunt 1.0 (@gruntjs-updater)
 - [95091ab](https://github.com/vojtajina/grunt-coffeelint/commit/95091abcb83e77c2a510ac63622af3b0e95ef530) Update peerDependencies to support Grunt 1.0
 
