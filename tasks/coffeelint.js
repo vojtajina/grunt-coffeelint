@@ -18,6 +18,15 @@ module.exports = function(grunt) {
       options = config;
     }
 
+    (options.rules || []).forEach(function(rule) {
+      try {
+        var RuleProcessor = require(rule);
+        coffeelint.registerRule(RuleProcessor);
+      } catch (e) {
+        return grunt.log.error(e);
+      }
+    });
+
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
 

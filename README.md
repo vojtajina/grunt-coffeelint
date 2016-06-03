@@ -23,6 +23,12 @@ Default value: `false`
 
 Set `force` to `true` to report CoffeeLint errors but not fail the task.
 
+### rules
+Type: `Array`
+Default value: `[]`
+
+List of npm packages to be loaded as custom rules. They have to be requirable so included in project's package.json or available as global package.
+
 ## Configuration
 
 `coffeelint` is a multitask, so you can use it similary to `lint`, `watch` etc...
@@ -70,6 +76,18 @@ grunt.initConfig({
           'level': 'error'
         }
       }
+    },
+    ...
+});
+````
+
+### Custom rules
+
+````javascript
+grunt.initConfig({
+    ...
+    coffeelint: {
+      rules: ['coffeelint-complex-conditions']
     },
     ...
 });
