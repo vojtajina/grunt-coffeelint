@@ -18,6 +18,10 @@ module.exports = function(grunt) {
       options = config;
     }
 
+    if (options.registerRule != undefined) {
+      coffeelint.registerRule(options.registerRule)
+    }
+
     files.forEach(function(file) {
       grunt.verbose.writeln('Linting ' + file + '...');
 
