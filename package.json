@@ -12,7 +12,8 @@
     "Ed Siok <sioked@gmail.com>",
     "travis4all <travis4all@diamon.dz>",
     "Adam Biggs <email@adambig.gs>",
-    "Jan Raasch <jan@janraasch.com>"
+    "Jan Raasch <jan@janraasch.com>",
+    "Marcus Wittig <wittigmarcus@gmail.com>"
   ],
   "repository": {
     "type": "git",
@@ -46,7 +47,7 @@
     "grunt-bump": "~0.0.7",
     "grunt-npm": "~0.0.2",
     "grunt-auto-release": "0.0.6",
-    "coffeelint": "^1"
+    "coffeelint": "^2"
   },
   "keywords": [
     "gruntplugin"
